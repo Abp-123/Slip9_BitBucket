@@ -1,0 +1,50 @@
+Step 1 — Create a Repository on Bitbucket
+Log in to your Bitbucket account.
+Click Create → Repository.
+Repository name: BitbucketGitOps
+Do NOT add README or .gitignore (we will create files manually)
+Click Create repository
+
+Step 2 — Clone the repository locally
+Open Git Bash:
+git clone https://<username>@bitbucket.org/<username>/BitbucketGitOps.git
+cd BitbucketGitOps
+
+Task 2: Create a file example.txt, add and commit it, and create a branch feature
+Create the file
+echo "This is an example file." > example.txt
+
+Add and commit
+git add example.txt
+git commit -m "Added example.txt"
+
+Create a new branch named feature
+git checkout -b feature
+
+
+Optional: make a small edit
+
+echo "Feature branch update." >> example.txt
+git add example.txt
+git commit -m "Updated example.txt in feature branch"
+
+Task 3: Push the feature branch, create PR, review & merge
+Push the feature branch to Bitbucket
+git push -u origin feature
+
+Create Pull Request on Bitbucket
+Go to Bitbucket → your repository.
+Click Branches.
+Find feature.
+Click Create pull request.
+Source branch: feature
+Destination branch: main
+Add title: "Merge feature into main"
+Click Create pull request
+
+Review and Merge Pull Request
+Open the pull request.
+Click Diff to review the changes.
+Click Merge at the bottom right.
+Choose Merge commit (default) and confirm.
+
